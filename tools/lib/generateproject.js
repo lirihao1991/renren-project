@@ -4,7 +4,7 @@ var fs = require('fs');
 
 function generateProject(projectInfo){
     var _srcPath = __dirname.replace("tools/lib", "");
-    _srcPath += "src/project/" + projectInfo.type + "/" + projectInfo.name + "/";
+    _srcPath += path.normalize("src/project/" + projectInfo.type + "/" + projectInfo.name + "/");
 
     fs.mkdirSync(_srcPath, 0755);
     fs.mkdirSync(_srcPath + "img", 0755);
