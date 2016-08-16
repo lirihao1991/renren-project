@@ -4,20 +4,20 @@ var webpack = require("webpack");
     extractTextPlugin = require('extract-text-webpack-plugin'),
     autoprefixer = require('autoprefixer');
 
-
 module.exports = {
     entry: {
-        libs:["./src/project/activity/test/js/libs/libs.js"],
-        test: ["./src/project/activity/test/js/test.js"]
+        libs:["./src/project/h5/h5/js/libs/libs.js"],
+        h5: ["./src/project/h5/h5/js/h5.js"],
+
     },
     output: {
-        path: "/Users/rihao-li/workspace/xn.static/static/activity/test",
+        path: "/Users/rihao-li/workspace/xn.static/static/h5/h5",
         filename: '[name].js',
     },
     module: {
         loaders: [
             {
-                test: /\.sass$/,
+                h5: /\.scss$/,
                 loader: extractTextPlugin.extract('style', 'css!postcss!sass')
             }
         ]
@@ -33,6 +33,6 @@ module.exports = {
             minChunks: Infinity
         }),
 
-        new extractTextPlugin('test.css')
+        new extractTextPlugin('h5.css')
     ],
 }
