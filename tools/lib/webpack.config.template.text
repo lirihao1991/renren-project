@@ -1,0 +1,38 @@
+var webpack = require("webpack");
+    path = require("path"),
+    nodeModules = path.join(__dirname,"node_modules"),
+    extractTextPlugin = require('extract-text-webpack-plugin'),
+    autoprefixer = require('autoprefixer');
+
+module.exports = {
+    entry: {
+        libs:["./src/project/{{type}}/{{projectName}}/js/libs/libs.js"],
+        {{projectName}}: ["./src/project/{{type}}/{{projectName}}/js/{{projectName}}.js"],
+
+    },
+    output: {
+        path: "{{svnPath}}/static/{{type}}/{{projectName}}",
+        filename: '[name].js',
+    },
+    module: {
+        loaders: [
+            {
+                {{projectName}}: /\.scss$/,
+                loader: extractTextPlugin.extract('style', 'css!postcss!sass')
+            }
+        ]
+    },
+    postcss: function () {
+        return [autoprefixer];
+    },
+
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "libs",
+            filename: "libs.js",
+            minChunks: Infinity
+        }),
+
+        new extractTextPlugin('{{projectName}}.css')
+    ],
+}
