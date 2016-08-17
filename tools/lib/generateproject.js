@@ -4,7 +4,7 @@ var fs = require('fs');
 
 function generateProject(projectInfo){
     var _srcPath = __dirname.replace(/tools[\/|\\]lib/, "");
-    var _dirsrcPath = "src/project/" + projectInfo.type + "/" + projectInfo.name + "/";
+    var _dirsrcPath = path.join("src/project/", projectInfo.type, "/", projectInfo.name, "/");
 
     // 生成项目目录
 /*  fs.mkdirSync(_dirsrcPath, 0755);
@@ -16,19 +16,20 @@ function generateProject(projectInfo){
     fs.mkdirSync(_dirsrcPath + "js/libs", 0755);*/
 
     // 写入webpack.config
-    var webpackConfigtext = fs.readFileSync(__dirname + '/webpack.config.template.text');
+    var webpackConfigtext = fs.readFileSync(path.join(__dirname, '/webpack.config.template.text'));
     webpackConfigtext = webpackConfigtext.toString();
 
     webpackConfigtext = webpackConfigtext.replace(/{{type}}/g, projectInfo.type);
     webpackConfigtext = webpackConfigtext.replace(/{{projectName}}/g, projectInfo.name);
     webpackConfigtext = webpackConfigtext.replace(/{{svnPath}}/g, projectInfo.svnPath);
 
-    writeWebpackConfig(_srcPath ,webpackConfigtext)
+    writeWebpackConfig(_srcPath ,webpackConfigtext);
+
 
 }
 
-function writeWebpackConfig(_srcPath ,webpackConfigtext){
-    fs.open(_srcPath+"webpack.config.js", "w", 0755, function(error, fd){
+function writeWebpackConfig(writePath ,webpackConfigtext){
+    fs.open(writePath + "webpack.config.js", "w", 0755, function(error, fd){
         if (error) throw error;
             fs.write(fd, webpackConfigtext, function(error){
                 if (error) throw error;

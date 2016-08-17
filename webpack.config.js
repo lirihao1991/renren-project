@@ -6,18 +6,18 @@ var webpack = require("webpack");
 
 module.exports = {
     entry: {
-        libs:["./src/project/h5/h5/js/libs/libs.js"],
-        h5: ["./src/project/h5/h5/js/h5.js"],
+        libs:["./src/project/h5/mytest/js/libs/libs.js"],
+        mytest: ["./src/project/h5/mytest/js/mytest.js"],
 
     },
     output: {
-        path: "/Users/rihao-li/workspace/xn.static/static/h5/h5",
+        path: "/Users/rihao-li/workspace/xn.static/static/h5/mytest",
         filename: '[name].js',
     },
     module: {
         loaders: [
             {
-                h5: /\.scss$/,
+                mytest: /\.scss$/,
                 loader: extractTextPlugin.extract('style', 'css!postcss!sass')
             }
         ]
@@ -33,6 +33,6 @@ module.exports = {
             minChunks: Infinity
         }),
 
-        new extractTextPlugin('h5.css')
+        new extractTextPlugin('mytest.css')
     ],
 }

@@ -91,6 +91,7 @@ function checkProjectType(answer, rl){
 }
 
 function checkSvnPath(answer, rl){
+    answer = fixPath(answer);
     fs.exists(answer, function(result){
         if (!result){
             console.log("\n找不到: " + answer + ", 请确认路径是否输入正确\n");
@@ -111,6 +112,11 @@ function reNewQuestion(rl){
         output: process.stdout
     });
     rl.question(questionArr[questionIndex].question, function(answer){questionArr[questionIndex].checkAnser(answer, rl)});
+}
+
+function fixPath(p){
+    p = p.replace(/\\/g, "/");
+    return p.replace(/[\/]$|[\\]$/, "");
 }
 
 
