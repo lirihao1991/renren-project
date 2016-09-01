@@ -1,5 +1,5 @@
 /* author: rihao.li 
- * description： generate renrenLive project
+ * description： generate renrenLive interact party
  * contact-way: rihao.li@renren-inc.com  mobile: 18301007730
  */
 
@@ -11,8 +11,8 @@ var generateProject = require('./generateproject');
 
 
 var questionArr = [
-        {question: "(请输入项目名称): ", checkAnser: checkProjectName},
         {question: "(请输入项目类型, 输入'list'获取类型列表): ", checkAnser: checkProjectType},
+        {question: "(请输入项目名称): ", checkAnser: checkProjectName},
         {question: "(请输入SVN仓库的绝对路径): ", checkAnser: checkSvnPath}
     ]
 
@@ -23,6 +23,8 @@ var questionIndex = 0;
 var projectInfo = {};
 
 var cnReg = /[^\u4e00-\u9fa5]/;
+
+var _srcPath = __dirname.replace(/tools[\/|\\]lib/, "");
 
 function projectInit(){
     this.init();
@@ -38,10 +40,16 @@ projectInit.prototype.init = function(){
 }
 
 function checkProjectName(answer, rl){
+    if(fs.existsSync(_srcPath + "src/project/" + projectInfo.type + "/" + answer))
+    {
+        console.log("\n项目已存在!\n");
+        reNewQuestion(rl);
+        return;
+    }
 
     if (answer.length && cnReg.test(answer)){
         questionIndex ++;
-        projectInfo.name = answer;
+        projectInfo.name = answer.toLowerCase();
         reNewQuestion(rl);
         return;
     }
@@ -63,7 +71,6 @@ function checkProjectName(answer, rl){
 }
 
 function checkProjectType(answer, rl){
-
     switch(answer){
         case 'list':
             for (var i=0; i < typeList.length; i++){
@@ -99,6 +106,8 @@ function checkSvnPath(answer, rl){
         }
         else{
             projectInfo.svnPath = answer;
+
+            //  interact end   begain construct project
             generateProject(projectInfo);
         }
     })
@@ -118,6 +127,5 @@ function fixPath(p){
     p = p.replace(/\\/g, "/");
     return p.replace(/[\/]$|[\\]$/, "");
 }
-
 
 module.exports = projectInit;

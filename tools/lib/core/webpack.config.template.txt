@@ -17,7 +17,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                {{projectName}}: /\.scss$/,
+                test: /\.scss$/,
                 loader: extractTextPlugin.extract('style', 'css!postcss!sass')
             }
         ]
@@ -27,12 +27,6 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "libs",
-            filename: "libs.js",
-            minChunks: Infinity
-        }),
-
         new extractTextPlugin('{{projectName}}.css')
     ],
 }

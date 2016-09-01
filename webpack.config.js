@@ -6,18 +6,18 @@ var webpack = require("webpack");
 
 module.exports = {
     entry: {
-        libs:["./src/project/h5/mytest/js/libs/libs.js"],
-        mytest: ["./src/project/h5/mytest/js/mytest.js"],
+        libs:["./src/project/h5/test/js/libs/libs.js"],
+        test: ["./src/project/h5/test/js/test.js"],
 
     },
     output: {
-        path: "/Users/rihao-li/workspace/xn.static/static/h5/mytest",
+        path: "/Users/rihao-li/workspace/xn.static/static/h5/test",
         filename: '[name].js',
     },
     module: {
         loaders: [
             {
-                mytest: /\.scss$/,
+                test: /\.scss$/,
                 loader: extractTextPlugin.extract('style', 'css!postcss!sass')
             }
         ]
@@ -27,12 +27,17 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "libs",
-            filename: "libs.js",
-            minChunks: Infinity
-        }),
-
-        new extractTextPlugin('mytest.css')
+        new extractTextPlugin('test.css')
     ],
+
+    resolve : {
+        alias : {
+            "jquery" : path.join(nodeModules,"/jquery/dist/jquery"),
+            // "jquery" : path.join(nodeModules,"/jquery/dist/jquery.min"),
+            "react"  : path.join(nodeModules,"/react/dist/react"),
+            // "react"  : path.join(nodeModules,"/react/dist/react.min"),
+            "react-dom" : path.join(nodeModules,"/react-dom/dist/react-dom"),
+            "highcharts": path.join(nodeModules,"/highcharts/highcharts")
+        }
+    }
 }
