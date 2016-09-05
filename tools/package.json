@@ -1,13 +1,13 @@
 {
   "name": "project",
   "version": "1.0.0",
-  "description": "construct renrenlive prokect",
+  "description": "construct renrenlive project",
   "main": "index.js",
   "scripts": {
   },
   "author": "rihao.li",
   "license": "ISC",
   "bin": {
-    "project": "./bin/test.js"
+    "pms": "./bin/test.js"
     }
 }
