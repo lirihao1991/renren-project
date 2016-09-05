@@ -30,6 +30,8 @@ function Pms(projectInfo, srcPath, mode){
         　//for (var projectName = )
     }
 
+    this._projectList = this.getProjectList();
+
 }
 
 /* mode G to make a new project */
@@ -63,6 +65,7 @@ Pms.prototype.registerProject = function(){
     for(pkey in this._projectList){
         this._projectList[pkey].status = 'unactive';
     }
+
 
     Object.defineProperty(this._projectList, key, {value: this._projectInfo, writable: true, enumerable: true, configurable: true});
     Object.defineProperty(this._projectList[key], 'status', {value: 'active', writable: true, enumerable: true, configurable: true});
