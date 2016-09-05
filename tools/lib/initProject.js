@@ -50,6 +50,7 @@ function checkProjectName(answer, rl){
     if (answer.length && cnReg.test(answer)){
         questionIndex ++;
         projectInfo.name = answer.toLowerCase();
+        projectInfo.tmp = [answer.toLowerCase()];
         reNewQuestion(rl);
         return;
     }

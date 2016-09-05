@@ -7,11 +7,11 @@
     <title>Document</title>
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no"/>
-    <script src = "http://s.xnimg.cn/a12345/static/{{type}}/{{name}}/libs.js"></script>
-    <link rel="stylesheet" href="http://s.xnimg.cn/a12345/{{type}}/{{name}}/{{name}}.css"/>
+    <script src = "http://s.xnimg.cn/a12345/wap/static/{{type}}/{{name}}/libs.js"></script>
+    <link rel="stylesheet" href="http://s.xnimg.cn/a12345/wap/static/{{type}}/{{name}}/{{name}}.css"/>
 </head>
 <body>
     
 </body>
-<script src = "http://s.xnimg.cn/a12345/static/{{type}}/{{name}}/{{name}}.js"></script>
+<script src = "http://s.xnimg.cn/a12345/wap/static/{{type}}/{{name}}/{{name}}.js"></script>
 </html>

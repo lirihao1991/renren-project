@@ -6,7 +6,7 @@
 
 /*
     Pms params:
-
+    
     @projectInfo | object | [svnPath][name][type] 
 
     @srcPath     | string | pms-rootPath
@@ -18,10 +18,18 @@ var fs   = require('fs');
 var path = require('path');
 
 function Pms(projectInfo, srcPath, mode){
-    this._projectInfo = projectInfo;
     this._srcPath = srcPath;
-    this._projectSrcPath = path.join("src/project/", this._projectInfo.type, "/", this._projectInfo.name, "/");
-    this._projectList = this.getProjectList(projectInfo);
+
+    if (projectInfo){
+        this._projectInfo = projectInfo;
+        this._projectSrcPath = path.join("src/project/", this._projectInfo.type, "/", this._projectInfo.name, "/");
+        this._activityProject = projectInfo;
+    }
+    else{
+        this._projectInfo = this.getProjectList();
+        　//for (var projectName = )
+    }
+
 }
 
 /* mode G to make a new project */
@@ -68,7 +76,6 @@ Pms.prototype.registerProject = function(){
 Pms.prototype.getProjectList = function(){
 
     var projectListJSON;
-
     if (!fs.existsSync(this._srcPath + '/tools/lib/core/projectList.json')){
         return {};
     }
