@@ -1,0 +1,355 @@
+@import '../../../../component/base/scss/reset.scss';
+@function ptr($px) {
+    @return to-fixed(($px / 75), 2) + rem;
+}
+
+@function to-fixed ($number, $digits: 0) {
+    $n: 1;
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+    @return floor($number * $n) / $n;
+}
+
+//当超过长度时，用...代替
+@mixin jiequ {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body {
+    background: #262456;
+}
+
+.content {
+    background: url(../img/starbackground.png) no-repeat;
+    background-size: 95%;
+    background-position: ptr(18) ptr(18);
+}
+
+.headimg {
+    width: ptr(717);
+    height: ptr(339);
+    margin: 0 auto;
+    background: url(../img/openscholl.png) no-repeat;
+    background-size: 100%;
+}
+
+.explain {
+    width: ptr(680);
+    margin: 0 auto;
+    color: #3de3f2;
+    font-size: ptr(26);
+    line-height: 1.5em;
+    span {
+        color: #ffffff;
+    }
+}
+
+.activitys {
+    width: ptr(660);
+    height: ptr(870);
+    margin: 0 auto;
+    position: relative;
+    margin-top: ptr(20);
+}
+
+.activityfood,
+.activityearthonehour,
+.activitynightparty,
+.activityprotectlove,
+.road {
+    display: absolute;
+}
+
+.activityfood {
+    width: ptr(228);
+    height: ptr(225);
+    position: absolute;
+    top: ptr(17);
+    left: ptr(50);
+    background: url(../img/food.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.activityearthonehour {
+    width: ptr(248);
+    height: ptr(240);
+    position: absolute;
+    top: ptr(203);
+    right: ptr(0);
+    background: url(../img/earthonehour.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+}
+
+.activitynightparty {
+    width: ptr(228);
+    height: ptr(218);
+    position: absolute;
+    top: ptr(339);
+    left: ptr(0);
+    background: url(../img/nightparty.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.activityprotectlove {
+    width: ptr(239);
+    height: ptr(222);
+    position: absolute;
+    top: ptr(604);
+    left: ptr(213);
+    background: url(../img/protectlove.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.activityroad {
+    width: ptr(470);
+    height: ptr(624);
+    position: absolute;
+    top: ptr(0);
+    left: ptr(200);
+    background: url(../img/road.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.activityprocess1,
+.activityprocess2,
+.activityprocess3,
+.activityprocess4 {
+    width: ptr(72);
+    height: ptr(72);
+    position: absolute;
+    background: url(../img/start.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.activityprocess1 {
+    top: ptr(46);
+    left: ptr(263);
+}
+
+.activityprocess2 {
+    top: ptr(158);
+    right: ptr(26);
+}
+
+.activityprocess3 {
+    top: ptr(369);
+    left: ptr(205);
+}
+
+.activityprocess4 {
+    top: ptr(573);
+    right: ptr(175);
+}
+
+.activityearth1,
+.activityearth2,
+.activityearth3,
+.activityearth4 {
+    position: absolute;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.activityearth1 {
+    width: ptr(79);
+    height: ptr(79);
+    top: ptr(60);
+    left: ptr(-20);
+    background-image: url(../img/star1.png);
+}
+
+.activityearth2 {
+    width: ptr(68);
+    height: ptr(68);
+    top: ptr(162);
+    left: ptr(360);
+    background-image: url(../img/star2.png);
+}
+
+.activityearth3 {
+    width: ptr(59);
+    height: ptr(59);
+    top: ptr(548);
+    right: ptr(-10);
+    background-image: url(../img/star3.png);
+}
+
+.activityearth4 {
+    width: ptr(124);
+    height: ptr(124);
+    top: ptr(666);
+    background-image: url(../img/star4.png);
+}
+
+.colleges {
+    width: 100%;
+    height: ptr(1268);
+    background-color: #c4faff;
+}
+
+.rank {
+    width: ptr(670);
+    margin: 0 auto;
+    background: #fff;
+    overflow: hidden;
+}
+
+.fronttree,
+.frontseven {
+    width: 100%;
+    height: ptr(100);
+    margin-top: ptr(30);
+    margin-bottom: ptr(30);
+    position: relative;
+    overflow: hidden;
+}
+
+.frontseven {
+    height: ptr(80);
+}
+
+.ranknum,
+.ranknumseven {
+    width: ptr(58);
+    height: ptr(58);
+    position: relative;
+    top: 50%;
+    margin-top: ptr(-29);
+    background: url(../img/rankstar.png) no-repeat;
+    background-size: 100%;
+    float: left;
+    color: #d96c00;
+    font-size: ptr(30);
+    text-align: center;
+    line-height: ptr(58);
+}
+
+.ranknumseven {
+    width: ptr(52);
+    height: ptr(44);
+    margin-top: ptr(-26);
+    background: url(../img/circlebackground.png) no-repeat;
+    background-size: cover;
+}
+
+.head {
+    background: url(../img/head1.png) no-repeat 50% 50%;
+    background-size: cover;
+    width: ptr(100);
+    height: ptr(100);
+    border-radius: 50%;
+    float: left;
+    margin-left: ptr(8);
+}
+
+.userinfo {
+    height: ptr(34);
+    width: ptr(488);
+    float: left;
+}
+
+.usernickname {
+    @include jiequ;
+    width: ptr(228);
+    height: 100%;
+    font-size: ptr(30);
+    color: #4d4d4d;
+    float: left;
+}
+
+.usercollengname {
+    color: #999999;
+    font-size: ptr(26);
+    margin-top: ptr(4);
+    margin-left: ptr(35);
+    float: left;
+}
+
+.userscore {
+    font-size: ptr(36);
+    color: #20c7d9;
+    width: ptr(155);
+    height: 100%;
+    float: right;
+    text-align: right;
+}
+
+.devoter {
+    height: ptr(60);
+    float: left;
+}
+
+.devoterimg {
+    background: url(../img/devoterimg.png) no-repeat 50% 50%;
+    background-size: cover;
+    width: ptr(60);
+    height: ptr(60);
+    float: left;
+}
+
+.devoterinfo {
+    float: left;
+    margin-left: ptr(10);
+    line-height: ptr(60);
+}
+
+.devoterinfo span {
+    font-size: ptr(22);
+}
+
+.devoterinfo span:first-child {
+    color: #999999;
+}
+
+.usercontent {
+    float: left;
+    width: ptr(490);
+    overflow: hidden;
+    margin-left: ptr(10);
+}
+
+.frontseven {
+    .head {
+        background: url(../img/head1.png) no-repeat 50% 50%;
+        background-size: cover;
+        width: ptr(80);
+        height: ptr(80);
+        border-radius: 50%;
+        float: left;
+        margin-left: ptr(23);
+    }
+    .usercontent {
+        margin-left: ptr(14);
+    }
+    .usernickname {
+        width: ptr(232);
+        font-size: ptr(30);
+    }
+    .userscore {
+        font-size: ptr(30);
+    }
+    .devoterimg {
+        display: none;
+    }
+}
+
+.frontmoreten {
+    height: ptr(44);
+    .usercontent {
+        margin-left: ptr(14);
+        width: ptr(600);
+    }
+    .userinfo{
+        width: 100%;
+    }
+
+    .usernickname{
+        width: ptr(332);
+    }
+}
+
+.devoterinfo .devotername {}
