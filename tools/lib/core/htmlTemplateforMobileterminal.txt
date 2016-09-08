@@ -8,10 +8,10 @@
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no"/>
     <script src = "http://s.xnimg.cn/a12345/wap/static/{{type}}/{{name}}/libs.js"></script>
-    <link rel="stylesheet" href="http://s.xnimg.cn/a12345/wap/static/{{type}}/{{name}}/{{name}}.css"/>
+    <link rel="stylesheet" href="http://s.xnimg.cn/a12345/wap/static/{{type}}/{{name}}/{{tmpname}}.css"/>
 </head>
 <body>
     
 </body>
-<script src = "http://s.xnimg.cn/a12345/wap/static/{{type}}/{{name}}/{{name}}.js"></script>
+<script src = "http://s.xnimg.cn/a12345/wap/static/{{type}}/{{name}}/{{tmpname}}.js"></script>
 </html>
