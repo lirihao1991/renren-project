@@ -28,7 +28,7 @@ function Pms(projectInfo, srcPath, mode){
     }
     else{
         for (var key in this._projectList){
-        if (this._projectList[key].status = 'activity'){
+        if (this._projectList[key].status == 'activity'){
             this._projectInfo = this._projectList[key];
             }
         }
