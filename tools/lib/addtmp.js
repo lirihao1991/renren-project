@@ -25,7 +25,7 @@ function addtmp(tmpname){
     pms._projectInfo.tmp.push(tmpname);
 
     for (var key in this._projectList){
-    if (this._projectList[key].status = 'activity'){
+    if (this._projectList[key].status = 'active'){
         this._projectList[key] = this._projectInfo;
         }
     }

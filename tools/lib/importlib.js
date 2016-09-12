@@ -1,7 +1,7 @@
-var walk = require('walk'),
-    files = [];
-
-
+var path = require('path'),
+    Pms  = require('./core/pms.js'),
+    fs   = require('fs');
+var libs = {zepto:true, flexible:true}
 
 function importlib(libName){
     if (!libName){
@@ -10,13 +10,42 @@ function importlib(libName){
         return;
     }
 
+    if (!libs[libName]){
+        console.log('we not have this libe, please check spell or contact rihao.li@renren-inc.com');
+        process.exit();
+        return;
+    }
+
     var _srcPath = __dirname.replace(/tools[\/|\\]lib/, "");
 
-    var walker = walk.walk(_srcPath + "/src/libs", {followLinks: false});
+    var pms = new Pms(false, _srcPath);
 
-    walker.on('file', function(root, stat, next){
+    if (!pms._projectInfo.libs){
+        pms._projectInfo.libs = [];
+        pms._projectInfo.libs.push(libName);
+    }
+    else{
+        for(var i =0; i<pms._projectInfo.libs.length ;i++)
+        {
+            if (pms._projectInfo.libs[i] == libName){
+                console.log("lib is allready import!")
+                process.exit();
+            }
+        }
+        pms._projectInfo.libs.push(libName);
+    }
 
-    })
+    for (var key in pms._projectLsit){
+        if (pms._projectLsit[key] == 'activity'){
+            pms._projectLsit[key] = pms._projectInfo;
+        }
+    }
+
+    pms.writeLibs();
+    pms.writeProjectsInfoJson();
+
+    console.log("lib import done");
+    process.exit();
 }
 
 
