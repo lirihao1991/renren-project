@@ -13,10 +13,10 @@ function switchProject(projectName){
     }
     else{
         for (var key in pms._projectList){
-            pms._projectList[key].status = 'unactivity';
+            pms._projectList[key].status = 'unactive';
         }
 
-        pms._projectList[projectName].status = 'activity';
+        pms._projectList[projectName].status = 'active';
         pms._projectInfo = pms._projectList[projectName];
         pms.gennerateWebpackConfig();
         pms.writeProjectsInfoJson();
