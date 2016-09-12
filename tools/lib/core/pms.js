@@ -45,8 +45,6 @@ Pms.prototype.gennerateWebpackConfig = function (){
         entryTmp += this._projectInfo.tmp[i] + ':["./src/project/' + this._projectInfo.type + '/' + this._projectInfo.name +'/js/' + this._projectInfo.tmp[i] + '.js"],\n\t\t';
     }
 
-    console.log(entryTmp);
-
     webpackConfigtext = webpackConfigtext.toString();
     webpackConfigtext = webpackConfigtext.replace(/{{entry}}/g,       entryTmp);
     webpackConfigtext = webpackConfigtext.replace(/{{type}}/g,        this._projectInfo.type);
@@ -83,7 +81,9 @@ Pms.prototype.registerProject = function(){
 Pms.prototype.getProjectList = function(){
 
     var projectListJSON;
+
     if (!fs.existsSync(this._srcPath + '/tools/lib/core/projectList.json')){
+        console.log(1);
         return {};
     }
     else{
