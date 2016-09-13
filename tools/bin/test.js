@@ -4,7 +4,8 @@ var path = require('path'),
     initProject = require('../lib/initProject'),
     importLib = require('../lib/importlib'),
     addtmp = require('../lib/addtmp'),
-    switchProject = require('../lib/switchProject');
+    switchProject = require('../lib/switchProject'),
+    showlist = require('../lib/list');
 
 
 switch (process.argv[2]){
@@ -19,5 +20,8 @@ switch (process.argv[2]){
             break;
     case 'co':
             switchProject(process.argv[3]);
+            break;
+    case 'list':
+            showlist();
             break;
 }
