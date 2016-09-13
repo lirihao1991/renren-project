@@ -6,12 +6,13 @@ var webpack = require("webpack");
 
 module.exports = {
     entry: {
-        libs:["./src/project/h5/test/js/libs/libs.js"],
-        test: ["./src/project/h5/test/js/test.js"],
+        libs:["./src/project/activity/starcollege/js/libs/libs.js"],
+        starcollege:["./src/project/activity/starcollege/js/starcollege.js"],
+		mytmp:["./src/project/activity/starcollege/js/mytmp.js"],
 
     },
     output: {
-        path: "/Users/rihao-li/workspace/xn.static/static/h5/test",
+        path: "D:/workspace/svn/xn.static/wap/static/activity/starcollege",
         filename: '[name].js',
     },
     module: {
@@ -19,6 +20,14 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loader: extractTextPlugin.extract('style', 'css!postcss!sass')
+            },
+            {
+                test: /.(png|jpg)$/,
+                loader: 'url-loader?limit=204800'
+            },
+            {
+              test: /\.(woff2?|otf|eot|svg|ttf)$/i,
+              loader: 'url?name=fonts/[name].[ext]'
             }
         ]
     },
@@ -26,18 +35,14 @@ module.exports = {
         return [autoprefixer];
     },
 
-    plugins: [
-        new extractTextPlugin('test.css')
-    ],
-
     resolve : {
         alias : {
-            "jquery" : path.join(nodeModules,"/jquery/dist/jquery"),
-            // "jquery" : path.join(nodeModules,"/jquery/dist/jquery.min"),
-            "react"  : path.join(nodeModules,"/react/dist/react"),
-            // "react"  : path.join(nodeModules,"/react/dist/react.min"),
-            "react-dom" : path.join(nodeModules,"/react-dom/dist/react-dom"),
-            "highcharts": path.join(nodeModules,"/highcharts/highcharts")
+            "zepto"    : path.join(__dirname,"src/zepto"),
+            "flexible" : path.join(__dirname,"src/flexible"),
         }
-    }
+    },
+
+    plugins: [
+        new extractTextPlugin('[name].css')
+    ],
 }
