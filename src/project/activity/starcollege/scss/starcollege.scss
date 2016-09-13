@@ -18,8 +18,41 @@
     text-overflow: ellipsis;
 }
 
+@mixin collegescontent($id) {
+    .norank#{$id} {
+        width: ptr(193);
+        height: ptr(45);
+        margin: 0 auto;
+        text-align: center;
+        margin-top: ptr(8);
+        background-image: url(../img/NO1.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    .collegename#{$id} {
+        margin: 0 auto;
+        margin-top: ptr(200);
+        font-size: ptr(36);
+        color: #fff;
+        span:nth-child(1) {
+            font-size: ptr(30);
+        }
+        span:nth-child(2) {
+            font-size: ptr(24);
+        }
+        text-align: center;
+    }
+    .divjoin#{$id} {
+        width: ptr(230);
+        height: ptr(85);
+        margin: 0 auto;
+        margin-top: ptr(35);
+    }
+}
+
 body {
     background: #262456;
+    font-family: "microsoft yahei", "黑体", "宋体", Tahoma, Verdana, Arial, Helvetica, sans-serif;
 }
 
 .content {
@@ -69,29 +102,42 @@ body {
     position: absolute;
     top: ptr(17);
     left: ptr(50);
-    background: url(../img/food.png) no-repeat;
-    background-size: 100% 100%;
 }
 
+#canvasfood {
+    width: ptr(228);
+    height: ptr(225);
+}
+
+#onehourcanvas {
+    width: ptr(228);
+    height: ptr(250);
+}
+
+#nightcanvas {
+    width: ptr(244);
+    height: ptr(218);
+}
+#protectcanvas{
+    width: ptr(239);
+    height: ptr(222);
+}
 .activityearthonehour {
-    width: ptr(248);
-    height: ptr(240);
+    width: ptr(228);
+    height: ptr(250);
     position: absolute;
-    top: ptr(203);
+    top: ptr(193);
     right: ptr(0);
-    background: url(../img/earthonehour.png) no-repeat;
-    background-size: 100% 100%;
     z-index: 1;
 }
 
 .activitynightparty {
-    width: ptr(228);
+    width: ptr(244);
     height: ptr(218);
     position: absolute;
     top: ptr(339);
     left: ptr(0);
-    background: url(../img/nightparty.png) no-repeat;
-    background-size: 100% 100%;
+
 }
 
 .activityprotectlove {
@@ -100,8 +146,7 @@ body {
     position: absolute;
     top: ptr(604);
     left: ptr(213);
-    background: url(../img/protectlove.png) no-repeat;
-    background-size: 100% 100%;
+
 }
 
 .activityroad {
@@ -145,64 +190,78 @@ body {
     right: ptr(175);
 }
 
-.activityearth1,
-.activityearth2,
-.activityearth3,
-.activityearth4 {
-    position: absolute;
+.activityearth1 {
+    position: relative;
     background-size: 100%;
     background-repeat: no-repeat;
+    background-position: ptr(0) ptr(70);
 }
 
 .activityearth1 {
-    width: ptr(79);
-    height: ptr(79);
-    top: ptr(60);
-    left: ptr(-20);
-    background-image: url(../img/star1.png);
-}
-
-.activityearth2 {
-    width: ptr(68);
-    height: ptr(68);
-    top: ptr(162);
-    left: ptr(360);
-    background-image: url(../img/star2.png);
-}
-
-.activityearth3 {
-    width: ptr(59);
-    height: ptr(59);
-    top: ptr(548);
-    right: ptr(-10);
-    background-image: url(../img/star3.png);
-}
-
-.activityearth4 {
-    width: ptr(124);
-    height: ptr(124);
-    top: ptr(666);
-    background-image: url(../img/star4.png);
+    width: 100%;
+    height: ptr(1039);
+    top: ptr(1);
+    background-image: url(../img/starearth.png);
 }
 
 .colleges {
+    padding-top: ptr(60);
     width: 100%;
-    height: ptr(1268);
-    background-color: #c4faff;
+    height: ptr(1124);
+    background: url(../img/college.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+ul {
+    overflow: hidden;
+    li {
+        margin-top: ptr(40);
+        float: left;
+        width: 50%;
+        height: ptr(420);
+        .licontent1 {
+            width: ptr(325);
+            height: ptr(400);
+            margin: 0 auto;
+            margin-left: ptr(30);
+            @include collegescontent(1);
+        }
+        .licontent2 {
+            width: ptr(325);
+            height: ptr(400);
+            margin-left: ptr(15);
+            @include collegescontent(2);
+        }
+        .licontent3 {
+            width: ptr(325);
+            height: ptr(400);
+            margin: 0 auto;
+            margin-left: ptr(30);
+            @include collegescontent(3);
+        }
+        .licontent4 {
+            width: ptr(325);
+            height: ptr(400);
+            margin-left: ptr(15);
+            @include collegescontent(4);
+        }
+    }
 }
 
 .rank {
     width: ptr(670);
     margin: 0 auto;
-    background: #fff;
+    background: #fffcf2;
     overflow: hidden;
+    position: relative;
+    top: -2.5rem;
 }
 
 .fronttree,
 .frontseven {
     width: 100%;
-    height: ptr(100);
-    margin-top: ptr(30);
+    height: ptr(120);
+    margin-top: ptr(10);
     margin-bottom: ptr(30);
     position: relative;
     overflow: hidden;
@@ -218,7 +277,7 @@ body {
     height: ptr(58);
     position: relative;
     top: 50%;
-    margin-top: ptr(-29);
+    margin-top: ptr(-39);
     background: url(../img/rankstar.png) no-repeat;
     background-size: 100%;
     float: left;
@@ -231,6 +290,7 @@ body {
 .ranknumseven {
     width: ptr(52);
     height: ptr(44);
+    line-height: ptr(44);
     margin-top: ptr(-26);
     background: url(../img/circlebackground.png) no-repeat;
     background-size: cover;
@@ -272,7 +332,7 @@ body {
 .userscore {
     font-size: ptr(36);
     color: #20c7d9;
-    width: ptr(155);
+    // width: ptr(155);
     height: 100%;
     float: right;
     text-align: right;
@@ -280,12 +340,13 @@ body {
 
 .devoter {
     height: ptr(60);
+    margin-top: 0.1rem;
     float: left;
 }
 
 .devoterimg {
     background: url(../img/devoterimg.png) no-repeat 50% 50%;
-    background-size: cover;
+    background-size: contain;
     width: ptr(60);
     height: ptr(60);
     float: left;
@@ -313,9 +374,10 @@ body {
 }
 
 .frontseven {
+    height: ptr(100);
     .head {
         background: url(../img/head1.png) no-repeat 50% 50%;
-        background-size: cover;
+        background-size: contain;
         width: ptr(80);
         height: ptr(80);
         border-radius: 50%;
@@ -343,13 +405,36 @@ body {
         margin-left: ptr(14);
         width: ptr(600);
     }
-    .userinfo{
+    .userinfo {
         width: 100%;
     }
-
-    .usernickname{
+    .userscore {
+        font-size: ptr(30);
+    }
+    .usernickname {
         width: ptr(332);
     }
+}
+
+.river {
+    width: 100%;
+    height: ptr(567);
+    background: url(../img/river.png) no-repeat;
+    background-size: 100% auto;
+    margin-top: -2.2rem;
+}
+
+.greendiv {
+    background: #88d347;
+    width: 100%;
+}
+
+.whitediv {
+    background: url(../img/riverback.png);
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .devoterinfo .devotername {}

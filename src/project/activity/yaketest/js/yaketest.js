@@ -1,0 +1,1 @@
+require('../scss/yaketest.scss')     //gennerate by pms , don't delete
