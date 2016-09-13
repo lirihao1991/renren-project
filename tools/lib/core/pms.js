@@ -28,12 +28,12 @@ function Pms(projectInfo, srcPath, mode){
     }
     else{
         for (var key in this._projectList){
-        if (this._projectList[key].status = 'activity'){
-            this._projectInfo = this._projectList[key];
+            if (this._projectList[key].status == 'active'){
+                this._projectInfo = this._projectList[key];
+                }
             }
         }
     }
-}
 
 /* mode G to make a new project */
 
@@ -44,8 +44,6 @@ Pms.prototype.gennerateWebpackConfig = function (){
     for (var i=0; i < this._projectInfo.tmp.length; i++){
         entryTmp += this._projectInfo.tmp[i] + ':["./src/project/' + this._projectInfo.type + '/' + this._projectInfo.name +'/js/' + this._projectInfo.tmp[i] + '.js"],\n\t\t';
     }
-
-    console.log(entryTmp);
 
     webpackConfigtext = webpackConfigtext.toString();
     webpackConfigtext = webpackConfigtext.replace(/{{entry}}/g,       entryTmp);
@@ -83,6 +81,7 @@ Pms.prototype.registerProject = function(){
 Pms.prototype.getProjectList = function(){
 
     var projectListJSON;
+
     if (!fs.existsSync(this._srcPath + '/tools/lib/core/projectList.json')){
         return {};
     }
@@ -114,9 +113,9 @@ Pms.prototype.generateTemplate = function(tmpname){
     var fd = fs.openSync(this._srcPath + "src/project/" + this._projectInfo.type + '/' + this._projectInfo.name +"/template/" + tmpname +'.jsp', "w", 0755);
     fs.writeSync(fd, htmlTemplate)
 
-    // libs
-    fd = fs.openSync(this._srcPath + "src/project/" + this._projectInfo.type + '/' + this._projectInfo.name +"/js/libs/libs.js", "w", 0755);
-    fs.writeSync(fd, '');
+    //libs
+
+    this.writeLibs();
 
     // scss
     fd = fs.openSync(this._srcPath + "src/project/" + this._projectInfo.type + '/' + this._projectInfo.name +"/scss/" +  tmpname + '.scss', "w", 0755);
@@ -131,6 +130,23 @@ Pms.prototype.writeProjectsInfoJson = function(){
 
     var fd = fs.openSync(this._srcPath + "/tools/lib/core/projectList.json", "w", 0755);
         fs.writeSync(fd, projectListJSON);
+}
+
+Pms.prototype.writeLibs = function(){
+
+    var libsTemplate = '';
+    var fd = fs.openSync(this._srcPath + "src/project/" + this._projectInfo.type + '/' + this._projectInfo.name +"/js/libs/libs.js", "w", 0755);
+    
+    if (this._projectInfo.libs){
+        for (var i = 0; i < this._projectInfo.libs.length; i++)
+        {
+            libsTemplate += 'require("' + this._projectInfo.libs[i] + '");\n';
+        }
+        fs.writeSync(fd, libsTemplate);
+    }
+    else{
+        fs.writeSync(fd, libsTemplate);
+    }
 }
 
 module.exports = Pms;

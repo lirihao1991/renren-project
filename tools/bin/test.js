@@ -2,8 +2,9 @@
 
 var path = require('path'),
     initProject = require('../lib/initProject'),
-    importLib = require('../lib/importLib'),
-    addtmp = require('../lib/addtmp')
+    importLib = require('../lib/importlib'),
+    addtmp = require('../lib/addtmp'),
+    switchProject = require('../lib/switchProject');
 
 
 switch (process.argv[2]){
@@ -12,6 +13,11 @@ switch (process.argv[2]){
             break;
     case 'import':
             importLib(process.argv[3]);
+            break;
     case 'addtmp':
             addtmp(process.argv[3]);
+            break;
+    case 'co':
+            switchProject(process.argv[3]);
+            break;
 }
