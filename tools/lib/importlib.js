@@ -10,11 +10,21 @@ function importlib(libName){
         return;
     }
 
+    if (libName== "--show"){
+        for( var key in libs){
+            console.log("\x1b[1m \x1b[32m" + key + "\t");
+        }
+        console.log("\x1b[0m");
+        process.exit();
+        return;
+    }
+
     if (!libs[libName]){
         console.log('we not have this libe, please check spell or contact rihao.li@renren-inc.com');
         process.exit();
         return;
     }
+
 
     var _srcPath = __dirname.replace(/tools[\/|\\]lib/, "");
 
