@@ -34,7 +34,7 @@ function rankPick(){
      var pubFunc = new public();
     var ranklist = require('../js/ranklist.js');
      ranklistobj = new ranklist(); 
-     ranklistobj.studentRank(JSON.stringify(weekRank),true,pubFunc,$(".rank"));
+     ranklistobj.studentRank(JSON.stringify(totalRank),true,pubFunc,$(".rank"));
     });
 
 }
@@ -137,7 +137,7 @@ function ajaxFunc(type, url, data, successFunc) {
 
 //判断是否加入
 function  inOrNot(){
-    if(hasJoin==true){
+    if(hasJoin==false){
         $('.userInfo').hide();
         $('.bottom').css("margin-top",'-2.1rem');
         $('.rankBar').css("margin-top",'-2.1rem');
@@ -147,5 +147,8 @@ function  inOrNot(){
 }
 //获取个人信息
 function userInfo(){
-    $('.point1').find('span').val(member.rankCount);
+    $('.point1').find('span').text(member.rankCount);
+    $('.point2').find('span').text(member.totalScore);
+    $('.point3').find('span').text(member.weekScore);
+    $('.point4').find('span').text(member.dayScoreBak);
 }
