@@ -1,0 +1,1 @@
+require('../scss/mytest.scss')     //gennerate by pms , don't delete

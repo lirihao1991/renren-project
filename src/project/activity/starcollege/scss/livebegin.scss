@@ -1,0 +1,127 @@
+@import '../../../../component/base/scss/reset.scss';
+
+@function ptr($px){
+    @return to-fixed(($px / 75), 2) + rem;
+}
+
+@function to-fixed ($number, $digits: 0) {
+    $n: 1;
+
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+
+    @return floor($number * $n) / $n;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    width: 100%; 
+    font-family: "黑体","microsoft yahei","宋体",Tahoma,Verdana,Arial,Helvetica,sans-serif;
+}
+.top{
+    width: 100%;
+    height: ptr(378);
+    background: url(../img/liveBegin.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    overflow-x: hidden;
+}
+.activityInfo{
+    width: ptr(154);
+    height: ptr(56);
+    background: url(../img/activityInfo.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    margin-left: ptr(552);
+    margin-top: ptr(316);
+}
+.middle{
+    width: 100%;
+    height: ptr(632);
+    background: url(../img/FCmiddle.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    overflow-x: hidden;
+}
+.foreshow{
+    width: ptr(720);
+    height:ptr(614);
+    margin:0 auto;
+    background: url(../img/foreshowBackground.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    overflow-x: hidden;
+}
+.foreshowBar{
+    width: ptr(556);
+    height: ptr(94);
+    margin:0 auto;
+    margin-top: ptr(42);
+    background: url(../img/foreshowBar.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.showList{
+    width: ptr(594);
+    height: ptr(110);
+    margin:0 auto;
+    margin-top:ptr(10);
+    background-color:#fff;
+    border-radius: ptr(15);
+}
+.userAvatar{
+    width: ptr(80);
+    height: ptr(80);
+    display: inline-block;
+    background: url(../img/head1.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    border-radius:50%;
+}
+.iconLeft{ 
+    width: ptr(40);
+    height: ptr(46);
+    margin-top: ptr(15);
+    margin-left: ptr(308);
+    display: inline-block;
+    background: url(../img/iconLeft.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.iconRight{ 
+    width: ptr(40);
+    height: ptr(46);
+    margin-top: ptr(15);
+    margin-left: ptr(30);
+    display: inline-block;
+    background: url(../img/iconRight.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.bottom{
+    width: 100%;
+    height: ptr(1350);
+    background-color:#93e6c4;
+     overflow-x: hidden;
+    // padding-top: 1px;
+}
+.jifenBar{
+    width: 100%;
+    height: ptr(109);
+    background: url(../img/jifenBar.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    position:absolute;
+}
+.rankList{
+    width: 90%;
+    margin:0 auto;
+    margin-top: 2%;
+    height: 98%;
+    border-radius:10px/100px;
+    background-color:blue;
+}

@@ -1,0 +1,210 @@
+@import '../../../../component/base/scss/reset.scss';
+@import 'rankcss.scss';
+@function ptr($px){
+    @return to-fixed(($px / 75), 2) + rem;
+}
+
+@function to-fixed ($number, $digits: 0) {
+    $n: 1;
+
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+
+    @return floor($number * $n) / $n;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    width: 100%; 
+    font-family: "黑体","microsoft yahei","宋体",Tahoma,Verdana,Arial,Helvetica,sans-serif;
+}
+.top{
+    background: url(../img/JGbackground.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    width: 100%;
+    height: ptr(800);
+    padding-top:ptr(34);
+}
+.JGhead{
+    background: url(../img/JGhead.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    float: left;
+    margin-left: ptr(40);
+    width: ptr(310);
+    height: ptr(227);
+}
+.JGInfo{
+    width: ptr(220);
+    height: ptr(242);
+    float: right;
+    margin-right: ptr(80);
+    // background-color:red;
+    color: #fff;
+    line-height: ptr(40);
+    font-size: ptr(22);
+}
+
+.JGtitle{
+    font-size: ptr(36);
+    text-align: center;
+}
+.xingxing{
+    width: ptr(36);
+    height: ptr(36);
+    display: inline-block;
+    background: url(../img/xingxing.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.textLeft{
+    display: inline-block;
+    width: ptr(120);
+    color: #21b1c8;
+}
+
+.JGIntroduction{
+    height: ptr(170);
+    width: ptr(670);
+    // position: relative;
+    margin-top: ptr(290);
+    margin-left: ptr(40);
+    background-color:#3e3b88;
+    color: #3de3f2;
+    border-radius: 8px;
+    font-size: ptr(26);
+}
+.userInfo{
+    width: ptr(670);
+    height: ptr(244);
+    margin:0 auto;
+    margin-top: ptr(70);
+    background-color:yellow;
+     background: url(../img/userInfo.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.userAvatar{
+    float: left;
+    width: ptr(120);
+    height: ptr(120);
+    border-radius:50%;
+    background-color:red;
+    margin-left: ptr(140);
+    margin-top: ptr(50);
+}
+.userPoints{
+    height: ptr(150);
+    width: ptr(276);
+    float: right;
+    margin-top: ptr(50);
+    margin-right: ptr(100);
+    // background-color:red;
+    color: #fff;
+    font-size: ptr(22);
+    line-height: ptr(34);
+}
+.point1{
+    font-size: ptr(26);
+}
+//pms addtmp jiguang
+.joinUs{
+    width: 100%;
+    height: ptr(100);
+    position: fixed;
+    bottom:0px; 
+    overflow:hidden;
+    background: url(../img/joinSchool.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.bottom{
+    background-color:#93e6c4;
+    width: 100%;
+    height: ptr(1350);
+    overflow-x: hidden;
+
+}
+.rankList{
+    width: 90%;
+    margin:0 auto;
+    height: 100%;
+    border-radius:10px/100px;
+    background-color:#fffcf2;
+}
+.rankBar{
+    width: 100%;
+    height: ptr(109);
+    background: url(../img/rankBar1.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    position:absolute;
+    top: ptr(815);
+}
+.leftBar{
+    display: inline-block;
+    margin-left: ptr(100);
+    margin-top: ptr(30);
+    width: ptr(260);
+    height: ptr(90);
+}
+.rightBar{
+    display: inline-block;
+    margin-left: ptr(30);
+    margin-top: ptr(30);
+    width: ptr(260);
+    height: ptr(90);
+}
+.mingci{
+    display: inline-block;
+    margin-top: ptr(100);
+    margin-left: ptr(30);
+    width: ptr(60);
+    height: ptr(30);
+    background: url(../img/mingci.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.nicheng{
+    display: inline-block;
+    margin-top: ptr(100);
+    margin-left: ptr(160);
+    width: ptr(60);
+    height: ptr(30);
+    background: url(../img/nicheng.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.jifen{
+    display: inline-block;
+    margin-top: ptr(100);
+    margin-left: ptr(240);
+    width: ptr(60);
+    height: ptr(30);
+    background: url(../img/jifen.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+}
+.goBack{
+    width: 100%;
+    height: ptr(100);
+    position: fixed;
+    bottom:0px; 
+    overflow:hidden;
+    background: url(../img/joinSchool.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+}
+ .rank {
+    width: ptr(670);
+    margin: 0 auto;
+    background: #fffcf2;
+    overflow: hidden;
+    position: relative;
+}
