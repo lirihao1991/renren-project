@@ -1,3 +1,4 @@
+
 module.exports = function() {
     /**
      * 生成排行榜
@@ -8,6 +9,7 @@ module.exports = function() {
      * @return {[type]}           [description]
      */
     this.studentRank = function (rankList,isShow,pubFunc,$obj){
+        console.log(rankList);
         var rankListObjArray = JSON.parse(rankList);
 
         rankListObjArray.sort(pubFunc.keysrt('totalScore', true));

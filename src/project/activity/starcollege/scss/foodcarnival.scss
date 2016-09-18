@@ -1,0 +1,187 @@
+@import '../../../../component/base/scss/reset.scss';
+
+@function ptr($px){
+    @return to-fixed(($px /75), 2) + rem;
+}
+
+@function to-fixed ($number, $digits: 0) {
+    $n: 1;
+
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+
+    @return floor($number * $n) / $n;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    width: 100%; 
+    font-family: "黑体","microsoft yahei","宋体",Tahoma,Verdana,Arial,Helvetica,sans-serif;
+}
+.top{
+    width: 100%;
+    height: ptr(500);
+    background: url(../img/FCtopBackground.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    padding-top:1px;
+}
+.activityInfo{
+    width: ptr(154);
+    height: ptr(56);
+    background: url(../img/activityInfo.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    margin-left: ptr(552);
+    margin-top: ptr(316);
+}
+.textInfo{
+    font-size: ptr(26);
+    color: #525092;
+    width: ptr(670);
+    height: ptr(120);
+    margin-top: ptr(15);
+    margin-left: auto;
+    margin-right: auto;
+}
+.main{
+     width: 100%;
+     height: ptr(570);
+     background: url(../img/FCmainBackground.png) no-repeat;
+     background-size: cover;
+     -moz-background-size: cover;
+}
+.enter{
+    width: ptr(582);
+    height: ptr(565);
+     background: url(../img/enter.png) no-repeat;
+     background-size: cover;
+     -moz-background-size: cover;
+     margin:0 auto;
+     padding-top:1px;
+}
+.textEnter1{
+    color: #9f621b;
+    font-size: ptr(28);
+    display: inline-block;
+    width: ptr(123);
+    height: ptr(45);
+    margin-top: ptr(180);
+    margin-left: ptr(80);
+}
+#collegeName{
+    display: inline-block;
+    border:none;
+    padding-left:ptr(20);
+    border-radius:4px;
+    width: ptr(274);
+    height: ptr(47);
+    color: #999999;
+}
+.jiantou{
+    position:absolute;
+    height: ptr(24);
+    width: ptr(15);
+    background: url(../img/jiantou.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    margin-left: ptr(480);
+    margin-top: ptr(-40);
+}
+.textEnter2{
+    color: #9f621b;
+    font-size: ptr(28);
+    display: inline-block;
+    width: ptr(123);
+    height: ptr(45);
+    margin-top: ptr(15);
+    margin-left: ptr(80);
+}
+#liveTime{
+    display: inline-block;
+    border:none;
+    padding-left:ptr(20);
+    border-radius:4px;
+    width: ptr(274);
+    height: ptr(47);
+    color: #999999;
+}
+.textEnter3{
+    color: #9f621b;
+    font-size: ptr(28);
+    display: inline-block;
+    width: ptr(123);
+    height: ptr(45);
+    margin-top: ptr(15);
+    margin-left: ptr(80);
+}
+#liveTitle{
+    display: inline-block;
+    border:none;
+    padding-left:ptr(20);
+    border-radius:4px;
+    width: ptr(274);
+    height: ptr(47);
+    color: #999999;
+}
+.enterTip{
+    font-size: ptr(22);
+    color: #e4c095;
+    width: ptr(440);
+    height: ptr(58);
+    margin:0 auto;
+    margin-top: ptr(15);
+}
+.enterButton{
+    width: ptr(184);
+    height: ptr(72);
+    margin: 0 auto;
+    margin-top: ptr(15);
+    background: url(../img/enterButton.png) no-repeat;
+     background-size: cover;
+     -moz-background-size: cover;
+}
+.bottom{
+    width: 100%;
+    height: ptr(1350);
+    background-color:#93e6c4;
+     overflow-x: hidden;
+    // padding-top: 1px;
+}
+.rankBar{
+    width: 100%;
+    height: ptr(104);
+    background: url(../img/jiguangButton.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    position:absolute;
+}
+.allXi{
+    width: ptr(157);
+    height: ptr(72);
+    display: inline-block;
+    margin-left: ptr(15);
+    margin-top: ptr(25);
+}
+.rankList{
+    width: 90%;
+    margin:0 auto;
+    margin-top: 2%;
+    height: 98%;
+    border-radius:10px/100px;
+    background-color:blue;
+}
+.backCollege{
+    width: 100%;
+    height: ptr(100);
+    position: fixed;
+    bottom:0px;
+    overflow:hidden;
+     background: url(../img/backCollege.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+}
