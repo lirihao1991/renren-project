@@ -1,0 +1,39 @@
+@import '../../../../component/base/scss/reset.scss';
+
+@function ptr($px){
+    @return to-fixed(($px / 75), 2) + rem;
+}
+
+@function to-fixed ($number, $digits: 0) {
+    $n: 1;
+
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+
+    @return floor($number * $n) / $n;
+}
+*{
+padding:0px;
+margin:0px;
+}
+body{
+    background-color: #262456;
+
+}
+.headContent{
+    width: 100%;
+    height:ptr(979);
+    background:red;
+
+   //background:: url(../img/foodaward/background.png) no-repeat;
+    background-size:100% 100%;
+}
+.rankContent{
+    width: 100%;
+    height: ptr(880);
+    background:red;
+    //background: url(../img/foodaward/awardBackground.png) repeat-y;
+    background-size:100% auto;
+
+}

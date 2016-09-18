@@ -94,14 +94,66 @@ body {
 .activityprotectlove,
 .road {
     display: absolute;
+    border: 1px solid red;
 }
 
 .activityfood {
     width: ptr(228);
     height: ptr(225);
     position: absolute;
-    top: ptr(17);
-    left: ptr(50);
+    top: 10%;
+    left: 10%;
+}
+
+.animationfood {
+   // animation: waveRaidus 2s ease-in 0s infinite;
+   animation: waveRaidus 3s infinite ease-out;
+}
+
+@keyframes waveRaidus {
+    // 0% {
+    //      width: ptr(156);
+    //      height: ptr(140);
+    //  }
+    //  50{
+    //      width: ptr(176);
+    //      height: ptr(157);
+    //  }
+    //   100% {
+    //      width: ptr(156);
+    //      height: ptr(140);
+    //  }
+    0% {
+        width: ptr(156);
+        height: ptr(140);
+    }
+
+    50% {
+          width: ptr(176);
+         height: ptr(157);
+    }
+
+    100% {
+        width: ptr(156);
+         height: ptr(140);
+    }
+}
+
+.food {
+    width: ptr(176);
+    height: ptr(157);
+    margin: 0 auto;
+    background: url("../img/food/foodonly.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.foodcaidai {
+    width: ptr(228);
+    height: ptr(112);
+    position: absolute;
+    top: 1.4rem;
+    background: url("../img/food/caidai.png") no-repeat;
+    background-size: 100% 100%;
 }
 
 #canvasfood {
@@ -256,7 +308,6 @@ ul {
     position: relative;
     top: -2.5rem;
 }
-
 
 .river {
     width: 100%;

@@ -1,6 +1,0 @@
-@import '../../../../component/base/scss/reset.scss';
-
-@function ptr($px){
-    @return floor($px / 75) + 'rem';
-}
-

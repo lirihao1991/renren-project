@@ -7,11 +7,11 @@
     <title>Document</title>
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no"/>
-    <script src = "http://s.xnimg.cn/a12345/wap/static/activity/yaketest/libs.js"></script>
-    <link rel="stylesheet" href="http://s.xnimg.cn/a12345/wap/static/activity/yaketest/mytmp.css"/>
+    <script src = "http://s.xnimg.cn/a12345/wap/static/h5/test/libs.js"></script>
+    <link rel="stylesheet" href="http://s.xnimg.cn/a12345/wap/static/h5/test/test.css"/>
 </head>
 <body>
     
 </body>
-<script src = "http://s.xnimg.cn/a12345/wap/static/activity/yaketest/mytmp.js"></script>
+<script src = "http://s.xnimg.cn/a12345/wap/static/h5/test/test.js"></script>
 </html>
