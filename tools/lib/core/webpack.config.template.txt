@@ -12,6 +12,7 @@ module.exports = {
     output: {
         path: "{{svnPath}}/static/{{type}}/{{projectName}}",
         filename: '[name].js',
+        publicPath: "http://a.xnimg.cn/wap/static/{{type}}/{{projectName}}/"
     },
     module: {
         loaders: [
