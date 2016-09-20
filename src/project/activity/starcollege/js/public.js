@@ -58,34 +58,3 @@ module.exports = function() {
         return num;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-event = function() {
-    // do more
-    return {
-        bind: function() {},
-        unbind: function() {},
-        trigger: function() {}
-    };
-}();
