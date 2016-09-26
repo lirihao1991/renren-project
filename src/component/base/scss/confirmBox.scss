@@ -1,0 +1,52 @@
+@function ptr($px){
+    @return to-fixed(($px / 75), 2) + rem;
+}
+
+@function to-fixed ($number, $digits: 0) {
+    $n: 1;
+
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+
+    @return floor($number * $n) / $n;
+}
+
+
+#confirmBoxContainer{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    .body{
+        border-radius: 10px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -4rem;
+        padding: ptr(40) 0 ptr(20) 0;
+        width: 8rem;
+        background: #fff;
+        p{
+            line-height: ptr(40);
+            padding:0 0.8rem;
+            color: #646464;
+        }
+    }
+
+    .btn{
+        display: inline-block;
+        padding: 0.2rem 1rem;
+        border: 1px solid #c9c9c9;
+    }
+
+    #btnContainner{
+        overflow: hidden;
+        margin-top: 0.5rem;
+        padding: 0 ptr(40);
+        div:last-child{
+            float: right;
+        }
+    }
+}

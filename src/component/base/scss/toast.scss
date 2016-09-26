@@ -1,0 +1,29 @@
+@function ptr($px){
+    @return to-fixed(($px / 75), 2) + rem;
+}
+
+@function to-fixed ($number, $digits: 0) {
+    $n: 1;
+
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+
+    @return floor($number * $n) / $n;
+}
+
+.toast {
+    position: fixed;
+    width: auto;
+    max-width: 3.4rem;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    padding: 0.4rem 0.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 0.05rem;
+    z-index: 10001;
+    font-size: 0.3rem;
+    color: #fff;
+    text-align: center;
+}
