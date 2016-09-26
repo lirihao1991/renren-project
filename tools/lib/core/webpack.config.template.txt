@@ -16,12 +16,16 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.scss$/,
+                test: /project.+\.scss$/,
                 loader: extractTextPlugin.extract('style', 'css!postcss!sass')
             },
             {
                 test: /.(png|jpg)$/, 
                 loader: 'url-loader?limit=204800'
+            },
+            {
+                test: /component.+\.scss$/,
+                loader: 'style!css!sass'
             },
             {
               test: /\.(woff2?|otf|eot|svg|ttf)$/i,
