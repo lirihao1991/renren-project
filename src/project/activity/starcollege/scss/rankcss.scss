@@ -17,15 +17,10 @@
 .fronttree,
 .frontseven {
     width: 100%;
-    height: ptr(120);
     margin-top: ptr(10);
     margin-bottom: ptr(30);
     position: relative;
-    overflow: hidden;
-}
-
-.frontseven {
-    height: ptr(80);
+    overflow-x: hidden;
 }
 
 .ranknum,
@@ -33,8 +28,7 @@
     width: ptr(58);
     height: ptr(58);
     position: relative;
-    top: 50%;
-    margin-top: ptr(-39);
+    margin-top: 0.25rem;
     background: url(../img/rankstar.png) no-repeat;
     background-size: 100%;
     float: left;
@@ -48,7 +42,7 @@
     width: ptr(52);
     height: ptr(44);
     line-height: ptr(44);
-    margin-top: ptr(-26);
+    margin-top: 0.2rem;
     background: url(../img/circlebackground.png) no-repeat;
     background-size: cover;
 }
@@ -136,12 +130,11 @@
 .usercontent {
     float: left;
     width: ptr(490);
-    overflow: hidden;
+    overflow-x: hidden;
     margin-left: ptr(10);
 }
 
 .frontseven {
-    height: ptr(100);
     .head {
         background: url(../img/head1.png) no-repeat 50% 50%;
         background-size: cover;
@@ -186,6 +179,10 @@
 
 .frontmoreten {
     height: ptr(44);
+    margin-top: ptr(30);
+    .ranknumseven{
+        margin-top: 0;
+    }
     .usercontent {
         margin-left: ptr(14);
         width: ptr(600);

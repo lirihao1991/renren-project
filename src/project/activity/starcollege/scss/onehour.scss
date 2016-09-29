@@ -1,0 +1,384 @@
+@import '../../../../component/base/scss/reset.scss';
+@function ptr($px) {
+    @return to-fixed(($px / 75), 2) + rem;
+}
+
+@function to-fixed ($number, $digits: 0) {
+    $n: 1;
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+    @return floor($number * $n) / $n;
+}
+
+body {
+    background: #ffffff;
+    font-family: "microsoft yahei", "黑体", "宋体", Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #4d4d4d;
+}
+
+@mixin jiequ {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.headerimg {
+    width: 100%;
+    height: ptr(279);
+    background: url(../img/onehourparty/head.png) no-repeat 50% 50%;
+    background-size: 100% 100%;
+}
+.explain {
+    margin-top: ptr(9);
+    width: 100%;
+    height: ptr(594);
+    background: #ffffff;
+    .run {
+        width: ptr(690);
+        height: ptr(258);
+        margin: 0 auto;
+        .title2text {
+            width: ptr(375);
+            font-size: ptr(26);
+            background: url(../img/onehourparty/title2.png) no-repeat;
+            background-size: contain;
+            padding-top: ptr(62);
+            float: left;
+            span {
+                color: #88d347;
+            }
+        }
+        .title2img {
+            float: right;
+            width: ptr(276);
+            height: ptr(240);
+            background: url(../img/onehourparty/gift2.png) no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+    .hisroom {
+        width: ptr(671);
+        height: ptr(268);
+        margin: 0 auto;
+        .title1text {
+            width: ptr(392);
+            font-size: ptr(26);
+            background: url(../img/onehourparty/title1.png) no-repeat;
+            background-size: contain;
+            padding-top: ptr(62);
+            float: right;
+        }
+        .title1img {
+            float: left;
+            width: ptr(240);
+            height: ptr(251);
+            background: url(../img/onehourparty/gift1.png) no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+}
+.explaintip{
+    width: 100%;
+    height:ptr(333);
+    background: url(../img/onehourparty/explain.png) no-repeat 50% 50%;
+    background-size: 100% 100%;
+}
+
+.toast {
+    position: fixed;
+    width: auto;
+    max-width: 3.4rem;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    padding: 0.4rem 0.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 0.05rem;
+    z-index: 10001;
+    font-size: 0.3rem;
+    color: #fff;
+    text-align: center;
+}
+
+.upbtn{
+     background-image: url(../img/onehourparty/up.png);
+}
+.downbtn{
+ background-image: url(../img/onehourparty/down.png);
+}
+.rank {
+    width: 100%;
+    background:#d9fcff;
+    position: relative;
+    overflow: hidden;
+
+    .rankhead {
+        margin-top:ptr(14);
+        width: 100%;
+        height: ptr(596);
+        background: url(../img/onehourparty/rankheader.png) no-repeat;
+        background-size: 100% 100%;
+    }
+    .ranklist {
+        margin: 0 auto;
+        margin-top: ptr(-335);
+        padding-bottom:ptr(120);
+        background:url(../img/onehourparty/rankback.png) repeat-y;
+        background-size: 100% auto;
+        .firstThree {
+            width: ptr(660);
+            margin: 0 auto;
+            margin-top: ptr(40);
+            overflow-y: hidden;
+            ul.rankul {
+                height: ptr(90);
+                font-size: ptr(0);
+                li {
+                    display: inline-block;
+                    height: 100%;
+                    font-size: ptr(30);
+                    width: ptr(67);
+                }
+                li:nth-child(1) {
+                    width: ptr(67);
+                    .ranknum {
+                        float: left;
+                        width: 100%;
+                        height: 100%;
+                        font-size: ptr(32);
+                        line-height: ptr(90);
+                        color: #d96c00;
+                        text-align: center;
+                        background-image: url(../img/rankstar.png);
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: ptr(57) ptr(57);
+                    }
+                }
+                li:nth-child(2) {
+                    width: ptr(125);
+                    .headimg {
+                        height: ptr(90);
+                        width: ptr(90);
+                        margin: 0 auto;
+                        background-color: red;
+                        background: url(../img/head1.png) no-repeat 50% 50%;
+                        background-size: cover;
+                        border-radius: 50%;
+                    }
+                }
+                li:nth-child(3) {
+                    width: ptr(240);
+                    .userinfo {
+                        float: left;
+                    }
+                    .username {
+                        line-height: ptr(50);
+                        width: ptr(228);
+                        height: ptr(50);
+                        font-size: ptr(30);
+                        color: #4d4d4d;
+                        @include jiequ;
+                    }
+                    .collegename {
+                        line-height: ptr(40);
+                        width: 100%;
+                        height: ptr(40);
+                        font-size: ptr(26);
+                        color: #999999;
+                        @include jiequ;
+                    }
+                }
+                li:nth-child(4) {
+                    width: ptr(172);
+                    .score {
+                        float: right;
+                        color: #20c7d9;
+                        font-size: ptr(36);
+                        line-height: ptr(90);
+                        height: ptr(90);
+                        text-align: right;
+                    }
+                }
+                li:nth-child(5) {
+                    width: ptr(56);
+                    .buttonIcon {
+                        display: none;
+                        float: right;
+                        width: 100%;
+                        height: 100%;
+                        background-repeat: no-repeat;
+                        background-size: ptr(34) ptr(20);
+                        background-position:center center;
+                    }
+                }
+            }
+        }
+        .notFirstThree {
+            width: ptr(660);
+            margin: 0 auto;
+            margin-top: ptr(40);
+             overflow-y: hidden;
+            ul.rankul {
+                height: ptr(70);
+                font-size: ptr(0);
+                li {
+                    display: inline-block;
+                    height: 100%;
+                    font-size: ptr(30);
+                    width: ptr(67);
+                }
+                li div {
+                    float: left;
+                }
+                li:nth-child(1) {
+                    min-width: ptr(67);
+                    .ranknum {
+                        min-width: ptr(53);
+                        height: ptr(45);
+                        border-radius: 50%;
+                        background-color: #f2edda;
+                        font-size: ptr(32);
+                        line-height: ptr(45);
+                        color: #d96c00;
+                        text-align: center;
+                        margin: ptr(12) 0;
+                        position: relative;
+                    }
+                }
+                li:nth-child(2) {
+                    width: ptr(125);
+                    .headimg {
+                        float: none;
+                        height: ptr(70);
+                        width: ptr(70);
+                        margin: 0 auto;
+                        background-color: red;
+                        background: url(../img/head1.png) no-repeat 50% 50%;
+                        background-size: cover;
+                        border-radius: 50%;
+                    }
+                }
+                li:nth-child(3) {
+                    width: ptr(240);
+                    .userinfo {
+                        float: left;
+                    }
+                    .username {
+                        line-height: ptr(40);
+                        width: ptr(228);
+                        height: ptr(40);
+                        font-size: ptr(28);
+                        color: #4d4d4d;
+                        @include jiequ;
+                    }
+                    .collegename {
+                        line-height: ptr(30);
+                        width: 100%;
+                        height: ptr(30);
+                        font-size: ptr(26);
+                        color: #999999;
+                        @include jiequ;
+                    }
+                }
+                li:nth-child(4) {
+                    width: ptr(172);
+                    .score {
+                        float: right;
+                        color: #20c7d9;
+                        font-size: ptr(30);
+                        line-height: ptr(70);
+                        height: ptr(70);
+                        text-align: right;
+                    }
+                }
+                li:nth-child(5) {
+                    width: ptr(56);
+                    .buttonIcon {
+                        display: none;
+                        float: right;
+                        width: 100%;
+                        height: 100%;
+                        background: url(../img/onehourparty/down.png) no-repeat right;
+                        background-size: ptr(34) ptr(20);
+                    }
+                }
+            }
+        }
+        .devoterlist {
+            width: ptr(590);
+            height: ptr(60);
+
+            float: right;
+            margin-top: ptr(20);
+            font-size: 0;
+            li {
+                display: inline-block;
+                 margin-left: 1rem;
+            }
+            li:nth-child(1) {
+                width: ptr(450);
+                height: 100%;
+            }
+            .headImgs {
+                width: ptr(100);
+                height: 100%;
+                position: relative;
+                float: left;
+                div {
+                    width: ptr(60);
+                    height: ptr(60);
+                    background: url(../img/head1.png) no-repeat 50% 50%;
+                    background-size: cover;
+                    border-radius: 50%;
+                    position: absolute;
+                }
+                .head2 {
+                    position: absolute;
+                    left: ptr(40);
+                    top: 0;
+                }
+            }
+            .tuhaoinfo {
+                width: ptr(250);
+                float: left;
+                margin-left: ptr(10);
+                .tuhaonameparent {
+                    font-size: ptr(24);
+                    color: #999999;
+                    height: ptr(30);
+                    line-height: ptr(30);
+                    .tuhaoname {
+                        vertical-align: bottom;
+                        line-height: ptr(30);
+                        height: ptr(30);
+                        width: ptr(200);
+                        display: inline-block;
+                        @include jiequ;
+                        color: #4d4d4d;
+                    }
+                    .givevalue {
+                        color: #20c7d9;
+                        font-size: ptr(24);
+                    }
+                }
+            }
+            li:nth-child(2) {
+                margin-left: ptr(10);
+                width: ptr(290);
+                height: 100%;
+            }
+        }
+    }
+}
+
+.mycollege {
+    background: url(../img/onehourparty/returncollege.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: ptr(100);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}

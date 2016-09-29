@@ -1,0 +1,259 @@
+@import '../../../../component/base/scss/reset.scss';
+@function ptr($px) {
+    @return to-fixed(($px / 75), 2) + rem;
+}
+
+@function to-fixed ($number, $digits: 0) {
+    $n: 1;
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+    @return floor($number * $n) / $n;
+}
+
+body {
+    background: #ffffff;
+    font-family: "microsoft yahei", "黑体", "宋体", Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    color: #4d4d4d;
+}
+
+@mixin jiequ {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+$black-fontcolor:#4d4d4d;
+$gray-fontcolor:#999;
+$qing-fontcolor:#20c7d9;
+.headerimg {
+    width: 100%;
+    height: ptr(898);
+    background: url(../img/onehourparty/oneHourAward.png) no-repeat 50% 50%;
+    background-size: 100% 100%;
+    overflow: hidden;
+    .topThree {
+        height: ptr(318);
+        width: ptr(675);
+        margin: 0 auto;
+        margin-top: ptr(533);
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+        &>div {
+            float: left;
+            margin: 0 auto;
+        }
+        div {
+            text-align: center;
+            overflow-y: hidden;
+        }
+        .second {
+            width: ptr(206);
+            margin-top: ptr(20);
+            margin-right: ptr(15);
+            height: 100%;
+            position: relative;
+            .authorname {
+                margin-top: ptr(10);
+            }
+            .headigms {
+                height: ptr(105);
+                .authorheadimg {
+                    width: ptr(105);
+                    height: ptr(105);
+                    border-radius: 50%;
+                    position: absolute;
+                    left: ptr(47);
+                    background: url(../img/onehourparty/head1.png) no-repeat 50% 50%;
+                    background-size: 100% 100%;
+                }
+                .devoterheadimg {
+                    width: ptr(75);
+                    height: ptr(75);
+                    border-radius: 50%;
+                    position: absolute;
+                    left: ptr(115);
+                    margin-top: ptr(35);
+                    background: url(../img/onehourparty/head1.png) no-repeat 50% 50%;
+                    background-size: 100% 100%;
+                }
+            }
+        }
+        .first {
+            width: ptr(225);
+            margin-right: ptr(15);
+            height: 100%;
+            position: relative;
+            .authorname {
+                margin-top: ptr(10);
+            }
+            .headigms {
+                height: ptr(120);
+                margin-top: ptr(5);
+                .authorheadimg {
+                    width: ptr(120);
+                    height: ptr(120);
+                    border-radius: 50%;
+                    position: absolute;
+                    left: ptr(47);
+                    background: url(../img/onehourparty/head1.png) no-repeat 50% 50%;
+                    background-size: 100% 100%;
+                }
+                .devoterheadimg {
+                    width: ptr(90);
+                    height: ptr(90);
+                    border-radius: 50%;
+                    position: absolute;
+                    left: ptr(105);
+                    margin-top: ptr(30);
+                    background: url(../img/onehourparty/head1.png) no-repeat 50% 50%;
+                    background-size: 100% 100%;
+                }
+            }
+        }
+        .third {
+            width: ptr(206);
+            margin-top: ptr(25);
+            height: 100%;
+            position: relative;
+            .authorname {
+                margin-top: ptr(2);
+            }
+            .headigms {
+                height: ptr(105);
+                .authorheadimg {
+                    width: ptr(105);
+                    height: ptr(105);
+                    border-radius: 50%;
+                    position: absolute;
+                    left: ptr(47);
+                    background: url(../img/onehourparty/head1.png) no-repeat 50% 50%;
+                    background-size: 100% 100%;
+                }
+                .devoterheadimg {
+                    width: ptr(75);
+                    height: ptr(75);
+                    border-radius: 50%;
+                    position: absolute;
+                    left: ptr(105);
+                    margin-top: ptr(30);
+                    background: url(../img/onehourparty/head1.png) no-repeat 50% 50%;
+                    background-size: 100% 100%;
+                }
+            }
+        }
+        .authorname,
+        .devotername {
+            font-size: ptr(30);
+            width: 70%;
+            margin: 0 auto;
+            color: $black-fontcolor;
+            @include jiequ;
+            line-height: 1.5em;
+        }
+        .collegename {
+            font-size: ptr(26);
+            width: 100%;
+            color: $gray-fontcolor;
+            @include jiequ;
+            line-height: 2em;
+        }
+        .devotevalue {
+            font-size: ptr(36);
+            color: $qing-fontcolor;
+            @include jiequ;
+        }
+    }
+}
+.mycollege {
+    background: url(../img/onehourparty/returncollege.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: ptr(100);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+.rank {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    width: 100%;
+    position: relative;
+    background: url(../img/onehourparty/rankback.png) repeat-y;
+    background-size: 100% auto;
+    overflow: hidden;
+    padding-bottom: ptr(100);
+}
+
+.bottomSeven {
+    width: ptr(670);
+    height: ptr(120);
+    margin: 0 auto;
+    margin-top: ptr(20);
+    &>div {
+        float: left;
+        margin-right: ptr(30);
+    }
+    .numbackgroundImg {
+        color: #d96c00;
+        font-size: ptr(32);
+        width: ptr(52);
+        line-height: ptr(44);
+        text-align: center;
+        height: ptr(44);
+        font-weight: 900;
+        margin-top: ptr(38);
+        background: url(../img/onehourparty/backgroundnumimg.png) no-repeat;
+        background-size: 100% auto;
+    }
+    .authordiv {
+        width: ptr(140);
+        height: ptr(120);
+        .authorimg {
+            width: ptr(70);
+            height: ptr(70);
+            margin: 0 auto;
+            border-radius: 50%;
+            background: url(../img/onehourparty/head1.png) no-repeat 50% 50%;
+            background-size: cover;
+        }
+        .authorname {
+            text-align: center;
+            font-size: ptr(28);
+            line-height: ptr(50);
+            width: 100%;
+            @include jiequ;
+        }
+    }
+    .devoterdiv {
+        width: ptr(140);
+        height: ptr(120);
+        .devoterimg {
+            width: ptr(70);
+            height: ptr(70);
+            margin: 0 auto;
+            border-radius: 50%;
+            background: url(../img/onehourparty/head1.png) no-repeat 50% 50%;
+            background-size: cover;
+        }
+        .devotername {
+            text-align: center;
+            font-size: ptr(28);
+            line-height: ptr(50);
+            width: 100%;
+            @include jiequ;
+        }
+    }
+    .collegename {
+        font-size: ptr(26);
+        color: #999;
+        line-height: ptr(120);
+    }
+    .valuediv {
+        width:ptr(120);
+        color: #20c7d9;
+        font-size: ptr(30);
+        font-weight: 900;
+        line-height: ptr(120);
+        margin-right: 0;
+        text-align: right;
+    }
+}

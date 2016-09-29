@@ -1,4 +1,3 @@
-
 module.exports = function() {
     /**
      * 生成排行榜
@@ -9,10 +8,8 @@ module.exports = function() {
      * @return {[type]}           [description]
      */
     this.studentRank = function (rankList,isShow,pubFunc,$obj){
-        console.log(rankList);
-        var rankListObjArray = JSON.parse(rankList);
-
-        rankListObjArray.sort(pubFunc.keysrt('totalScore', true));
+        var rankListObjArray = rankList;
+        rankListObjArray.sort(pubFunc.getSortFun('desc', 'totalScore'));
         rankListObjArray.forEach(function(item, index, array) {
             var str;
             if (index < 3) {
@@ -21,7 +18,6 @@ module.exports = function() {
                     (index + 1) +
                     '</div>' +
                     '<div class="head" style="background-image:url(' + item.headUrl + ')">' +
-
                     '</div>' +
                     '<div class="usercontent">' +
                     '<div class="userinfo">' +
@@ -36,11 +32,11 @@ module.exports = function() {
                     '</div>' +
                     '</div>' +
                     '<div class="devoter">' +
-                    '<div class="devoterimg">' +
+                    '<div class="devoterimg" style="background-image:url(' + item.firstHead + ')">' +
                     '</div>' +
                     '<div class="devoterinfo">' +
-                    '<span>赞助人</span>' +
-                    '<span class="devotername">赞助人的名字</span>' +
+                    '<span>守护者</span>' +
+                    '<span class="devotername">'+item.firstName+'</span>' +
                     '</div><div class="yesterUporDown showOrhide">昨日+2345</div>' +
                     '</div>' +
                     '</div>' +
@@ -66,29 +62,40 @@ module.exports = function() {
                     '</div>' +
                     '</div>' +
                     '<div class="devoter">' +
-                    '<div class="devoterimg">' +
+                    '<div class="devoterimg" style="background-image:url(' + item.firstHead + ')">' +
                     '</div>' +
                     '<div class="devoterinfo">' +
-                    '<span>赞助人</span>' +
-                    '<span class="devotername">赞助人的名字</span>' +
+                    '<span>守护者</span>' +
+                   '<span class="devotername">'+item.firstName+'</span>' +
                     '</div><div class="yesterUporDown showOrhide">昨日+2345</div>' +
                     '</div>' +
                     '</div>' +
                     '</div>';
             } else {
-                str = '<div class="frontmoreten">' +
-                    '<div class="ranknumseven">' +
-                    (index + 1) +
-                    '</div> < div class = "usercontent" >' +
-                    '< div class = "userinfo" >' +
-                    '< div class = "usernickname" >' +
-                    item.userName + '< /div> < div class = "usercollengname" >' +
-                    item.collegeName + '< /div> < div class = "userscore" >' +
-                    pubFunc.numChange(item.totalScore) + '< /div> < /div> < /div> < /div>'
+                str ='<div class="frontmoreten">'+
+                                    '<div class="ranknumseven">'+
+                                         (index + 1) +
+                                    '</div>'+
+                                    '<div class="usercontent">'+
+                                        '<div class="userinfo">'+
+                                            '<div class="usernickname">'+
+                                                 item.userName+
+                                            '</div>'+
+                                            '<div class="usercollengname">'+
+                                            item.collegeName +
+                                            '</div>'+
+                                            '<div class="userscore">'+
+                                                pubFunc.numChange(item.totalScore) +
+                                            '</div>'+
+                                        '</div>'+
+                                    '</div>'+
+                   '</div>';
+
             }
             $obj.append(str);
         });
         if (isShow) {
+
             $(".showOrhide").show();
         } else {
             $(".showOrhide").hide();

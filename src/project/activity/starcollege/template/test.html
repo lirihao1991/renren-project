@@ -1,124 +1,33 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <style>
-    .content {
-        width: 100px;
-        height: 100px;
-        border-left: 2px solid black;
-        border-bottom: 2px solid black;
-        position: relative;
-    }
-
-    .content div {
-        width: 15px;
-        position: absolute;
-        bottom: 0;
-    }
-
-    .div1 {
-        left: 5px;
-        top: 70%;
-        background-color: #f00;
-    }
-
-    .div2 {
-        left: 25px;
-        top: 20%;
-        background-color: #ddd;
-    }
-
-    .div3 {
-        left: 45px;
-        top: 30%;
-        background-color: #0fd;
-    }
-
-    .div4 {
-        left: 65px;
-        top: 40%;
-        background-color: #ff0;
-    }
-
-    .div5 {
-        left: 85px;
-        top: 10%;
-        background-color: #234;
-    }
-    </style>
-    <script src="../js/jiguang.js">
-    </script>
-    <link rel="stylesheet" href="">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>jQuery实现当拉动滚动条到底部加载数据</title>
+<style type="text/css">
+*{margin:0;pa动态加载数据ing:0;}
+body{font-size:14px;color:#444;font-family:"微软雅黑",Arial;background:#fff;width: 100%}
+.s1{
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    float: left;
+}
+.s2{
+    width: auto;
+    height: 100px;
+    background-color: blue;
+    float: right;
+}
+</style>
 </head>
-
 <body>
-    <div class="content">
-        <div class="div1">
-        </div>
-        <div class="div2">
-        </div>
-        <div class="div3">
-        </div>
-        <div class="div4">
-        </div>
-        <div class="div5">
-        </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+</script>
+</head>
+<body>
+    <div class="s1">
     </div>
-    <script>
-    var data = [{
-        userId: 8,
-        title: "title1"
-    }, {
-        userId: 11,
-        title: "other"
-    }, {
-        userId: 15,
-        title: null
-    }, {
-        userId: 19,
-        title: "title2"
-    }];
-    var find = function(origin) {
-        function getSortFun(sortBy, order) {  
-            var ordAlpah = (order == 'asc') ? '>' : '<';  
-            var sortFun = new Function('a', 'b', 'return a.' + sortBy + ordAlpah + 'b.' + sortBy + '?1:-1');  
-            return sortFun;
-        }
-
-        function getInputsByType(obj) {
-            var type;
-            var value;
-            for (var keyname in obj) {
-                type = keyname;
-                value = obj[type];
-                break;
-            }
-
-            var length = origin.length;
-            var ret = [];
-            for (var i = 0; i < length; i++) {
-                var input = origin[i];
-                if (origin[type] == value) {
-                    ret.push(input);
-                }
-            }
-            return ret;
-        }
-        return {
-            where: function() {
-                getSortFun(sortBy, order)
-            },
-            orderBy: function(sortBy, order) {
-                origin.sort(getSortFun(sortBy, order));
-            }
-        }
-    }
-    find().where();
-    </script>
+    <div class="s2"></div>
 </body>
-
 </html>

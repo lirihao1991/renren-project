@@ -70,7 +70,7 @@ body
 }
 
 .JGIntroduction{
-    height: ptr(170);
+    height: ptr(140);
     width: ptr(670);
     // position: relative;
     margin-top: ptr(290);
@@ -79,6 +79,7 @@ body
     color: #3de3f2;
     border-radius: 8px;
     font-size: ptr(26);
+    padding:ptr(15);
 }
 .userInfo{
     width: ptr(670);
@@ -95,9 +96,14 @@ body
     width: ptr(120);
     height: ptr(120);
     border-radius:50%;
-    background-color:red;
     margin-left: ptr(140);
     margin-top: ptr(50);
+}
+.userAvatar img{
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius:50%;
 }
 .userPoints{
     height: ptr(150);
@@ -127,16 +133,18 @@ body
 .bottom{
     background-color:#93e6c4;
     width: 100%;
-    height: ptr(1350);
+    min-height: ptr(700);
     overflow-x: hidden;
+    padding-bottom:ptr(75);
 
 }
 .rankList{
     width: 90%;
     margin:0 auto;
-    height: 100%;
+    min-height: ptr(750);
     border-radius:10px/100px;
     background-color:#fffcf2;
+    padding-bottom:ptr(75);
 }
 .rankBar{
     width: 100%;
@@ -165,8 +173,8 @@ body
     display: inline-block;
     margin-top: ptr(100);
     margin-left: ptr(30);
-    width: ptr(60);
-    height: ptr(30);
+    width: ptr(70);
+    height: ptr(33);
     background: url(../img/mingci.png) no-repeat;
     background-size: cover;
     -moz-background-size: cover;
@@ -175,9 +183,9 @@ body
     display: inline-block;
     margin-top: ptr(100);
     margin-left: ptr(160);
-    width: ptr(60);
-    height: ptr(30);
-    background: url(../img/nicheng.png) no-repeat;
+    width: ptr(70);
+    height: ptr(33);
+    background: url(../img/nicheng.png) no-repeat 50% 50%;
     background-size: cover;
     -moz-background-size: cover;
 }
@@ -185,9 +193,9 @@ body
     display: inline-block;
     margin-top: ptr(100);
     margin-left: ptr(240);
-    width: ptr(60);
-    height: ptr(30);
-    background: url(../img/jifen.png) no-repeat;
+    width: ptr(70);
+    height: ptr(33);
+    background: url(../img/jifen.png) no-repeat 50% 50%;
     background-size: cover;
     -moz-background-size: cover;
 }
@@ -197,7 +205,7 @@ body
     position: fixed;
     bottom:0px; 
     overflow:hidden;
-    background: url(../img/joinSchool.png) no-repeat;
+    background: url(../img/returnback.png) no-repeat 50% 50%;
     background-size: cover;
     -moz-background-size: cover;
 }
@@ -205,6 +213,21 @@ body
     width: ptr(670);
     margin: 0 auto;
     background: #fffcf2;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
 }
+ .toast{
+            position: fixed;
+            width: auto;
+            max-width: 3.4rem;
+            top:50%;
+            left: 50%;
+            -webkit-transform:translate3d(-50%,-50%,0);
+            padding:0.4rem 0.5rem;
+            background: rgba(0,0,0,.8);
+            border-radius: 0.12rem;
+            z-index: 10001;
+            font-size: 0.3rem;
+            color: #fff;
+            text-align: center;
+        }

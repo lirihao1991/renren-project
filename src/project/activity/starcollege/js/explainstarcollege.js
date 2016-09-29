@@ -1,0 +1,1 @@
+require('../scss/explainstarcollege.scss')     //gennerate by pms , don't delete

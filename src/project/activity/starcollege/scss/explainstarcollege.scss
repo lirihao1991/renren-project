@@ -1,0 +1,37 @@
+@import '../../../../component/base/scss/reset.scss';
+
+@function ptr($px){
+    @return to-fixed(($px / 75), 2) + rem;
+}
+
+@function to-fixed ($number, $digits: 0) {
+    $n: 1;
+
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+
+    @return floor($number * $n) / $n;
+}
+body{
+    height:ptr(3235);
+    background:#262257;
+
+}
+.explainimg{
+    width: 100%;
+    height:ptr(3140);
+    background: url(../img/rule.png) no-repeat;
+    background-size:100% 100%;
+    margin-bottom: ptr(100);
+}
+.mycollege {
+    background: url(../img/greencollege.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: ptr(100);
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+}

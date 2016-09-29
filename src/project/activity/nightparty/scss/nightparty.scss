@@ -1,0 +1,209 @@
+@import '../../../../component/base/scss/reset.scss';
+
+@function ptr($px){
+    @return to-fixed(($px / 75), 2) + rem;
+}
+
+@function to-fixed ($number, $digits: 0) {
+    $n: 1;
+
+    @for $i from 1 through $digits {
+        $n: $n * 10;
+    }
+
+    @return floor($number * $n) / $n;
+}
+@mixin jiequ {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    width: 100%; 
+    font-family: "黑体","microsoft yahei","宋体",Tahoma,Verdana,Arial,Helvetica,sans-serif;
+}
+.top{
+    width: 100%;
+    height: ptr(1538);
+    background: url(../img/NPtopBackground.png) no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    overflow-x:hidden;
+}
+.textInfo{
+    color: #a8a5ff;
+    width: ptr(662);
+    height: ptr(65);
+    margin-left: ptr(45);
+    margin-top: ptr(416);
+}
+.bottom{
+    background:url(../img/NPbottomBackground.png) no-repeat;
+    background-size:100% auto;
+    width: 100%;
+    height:ptr(2000);
+    background-color:#93e6c4;
+}
+.enter{
+    width: ptr(629);
+    height: ptr(507);
+     background: url(../img/enter.png) no-repeat;
+     background-size: cover;
+     -moz-background-size: cover;
+     margin:0 auto;
+     padding-top:1px;
+}
+.textEnter1{
+    color: #9f621b;
+    font-size: ptr(28);
+    display: inline-block;
+    width: ptr(123);
+    height: ptr(45);
+    margin-top: ptr(180);
+    margin-left: ptr(80);
+}
+#collegeName{
+    display: inline-block;
+    border:none;
+    padding-left:ptr(20);
+    border-radius:4px;
+    width: ptr(274);
+    height: ptr(47);
+    color: #999999;
+}
+.jiantou{
+    position:absolute;
+    height: ptr(24);
+    width: ptr(15);
+    background: url(../img/jiantou.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    margin-left: ptr(480);
+    margin-top: ptr(-40);
+}
+.textEnter2{
+    color: #9f621b;
+    font-size: ptr(28);
+    display: inline-block;
+    width: ptr(123);
+    height: ptr(45);
+    margin-top: ptr(15);
+    margin-left: ptr(80);
+}
+#liveTime{
+    display: inline-block;
+    border:none;
+    padding-left:ptr(20);
+    border-radius:4px;
+    width: ptr(274);
+    height: ptr(47);
+    color: #999999;
+}
+.textEnter3{
+    color: #9f621b;
+    font-size: ptr(28);
+    display: inline-block;
+    width: ptr(123);
+    height: ptr(45);
+    margin-top: ptr(15);
+    margin-left: ptr(80);
+}
+#liveTitle{
+    display: inline-block;
+    border:none;
+    padding-left:ptr(20);
+    border-radius:4px;
+    width: ptr(274);
+    height: ptr(47);
+    color: #999999;
+}
+.enterTip{
+    font-size: ptr(22);
+    color: #e4c095;
+    width: ptr(440);
+    height: ptr(58);
+    margin:0 auto;
+    margin-top: ptr(15);
+}
+.enterButton{
+    width: ptr(184);
+    height: ptr(72);
+    margin: 0 auto;
+    margin-top: ptr(15);
+    background: url(../img/enterButton.png) no-repeat;
+     background-size: cover;
+     -moz-background-size: cover;
+}
+.paiming{
+    padding-top:ptr(20);
+}
+.rankBar{
+    width: 100%;
+    height: ptr(104);
+    background: url(../img/jiguangButton.png);
+     background-size: 100% auto; 
+    background-size: cover;
+    -moz-background-size: cover;
+    position:absolute;
+    overflow-x: hidden;
+
+}
+.allXi{
+    width: ptr(157);
+    height: ptr(72);
+    display: inline-block;
+    margin-left: ptr(15);
+    margin-top: ptr(25);
+}
+.rankList{
+    width: 90%;
+    margin:0 auto;
+    margin-top: 2%;
+     min-height:ptr(900) ;
+    border-radius:10px/100px;
+    background-color:#fffcf2;
+    padding-bottom:ptr(200);
+}
+.yiBaoMing{
+     width: ptr(180);
+     height: ptr(35);
+    display: inline-block;
+    background: url(../img/yibaomingUser.png) no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    margin-top: ptr(120);
+    margin-left: ptr(120);
+}
+.liveTime{
+    width: ptr(130);
+    height: ptr(35);
+    display: inline-block;
+    background: url(../img/zhiboTime.png) no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    margin-left: ptr(125);
+}
+.rankList{
+    width: 90%;
+    margin:0 auto;
+    margin-top: 2%;
+     min-height:ptr(900) ;
+    border-radius:10px/100px;
+    background-color:#fffcf2;
+    padding-bottom:ptr(200);
+}
+.backCollege{
+    width: 100%;
+    height: ptr(100);
+    position: fixed;
+    bottom:0px;
+    overflow:hidden;
+     background: url(../img/backCollege.png) no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+}
