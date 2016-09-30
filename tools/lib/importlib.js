@@ -1,7 +1,7 @@
 var path = require('path'),
     Pms  = require('./core/pms.js'),
     fs   = require('fs');
-var libs = {zepto:true, flexible:true}
+var libs = {zepto:true, flexible:true, confirmBox: true, toast: true}
 
 function importlib(libName){
     if (!libName){
